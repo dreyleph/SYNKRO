@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://prujp2nvwe3n"]
+[gd_scene load_steps=3 format=3 uid="uid://prujp2nvwe3n"]
 
 [ext_resource type="PackedScene" uid="uid://d3r3i3fewsmo0" path="res://Objetos/key_listener.tscn" id="1_up8ek"]
+[ext_resource type="PackedScene" uid="uid://b2qjvnw73fgs3" path="res://Levels/game_ui.tscn" id="2_wlvk4"]
 
 [node name="GameLevel" type="Node2D"]
 
@@ -8,12 +9,18 @@
 
 [node name="KeyListener" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(-124, 270)
+key_name = "button_D"
 
 [node name="KeyListener2" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(-41, 270)
+key_name = "button_F"
 
 [node name="KeyListener3" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(41, 270)
+key_name = "button_K"
 
 [node name="KeyListener4" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(124, 270)
+key_name = "button_L"
+
+[node name="GameUI" parent="." instance=ExtResource("2_wlvk4")]
