@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2qjvnw73fgs3"]
+[gd_scene load_steps=3 format=3 uid="uid://b2qjvnw73fgs3"]
 
 [ext_resource type="Script" uid="uid://cyta80hiphh6c" path="res://Levels/game_ui.gd" id="1_vqdjf"]
+[ext_resource type="FontFile" uid="uid://h7gry1lnk84b" path="res://Arts/AceOfSwords3D-BLVLx.otf" id="2_tpokw"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -15,9 +16,24 @@ script = ExtResource("1_vqdjf")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_right = 320.0
-offset_bottom = 107.0
+offset_left = 14.0
+offset_top = 17.0
+offset_right = 344.0
+offset_bottom = 67.0
+theme_override_fonts/normal_font = ExtResource("2_tpokw")
 theme_override_font_sizes/normal_font_size = 40
-text = "0 Pts"
+text = " 0 Pts"
+scroll_active = false
+tab_size = 9
+
+[node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 14.0
+offset_top = 76.0
+offset_right = 344.0
+offset_bottom = 129.0
+theme_override_fonts/normal_font = ExtResource("2_tpokw")
+theme_override_font_sizes/normal_font_size = 40
+text = " 0X"
 scroll_active = false
 tab_size = 9

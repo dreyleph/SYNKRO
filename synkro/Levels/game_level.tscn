@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://prujp2nvwe3n"]
+[gd_scene load_steps=6 format=3 uid="uid://prujp2nvwe3n"]
 
 [ext_resource type="PackedScene" uid="uid://d3r3i3fewsmo0" path="res://Objetos/key_listener.tscn" id="1_up8ek"]
+[ext_resource type="Texture2D" uid="uid://r82k31wxtu2v" path="res://Arts/BKGimg.jpg" id="1_wownj"]
 [ext_resource type="PackedScene" uid="uid://b2qjvnw73fgs3" path="res://Levels/game_ui.tscn" id="2_wlvk4"]
+[ext_resource type="PackedScene" uid="uid://6pgv2uq86shv" path="res://Objetos/level_editor.tscn" id="4_wownj"]
+
+[sub_resource type="Environment" id="Environment_wmi5p"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
 
 [node name="GameLevel" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackGround" type="Sprite2D" parent="."]
+scale = Vector2(0.815, 0.815)
+texture = ExtResource("1_wownj")
 
 [node name="KeyListener" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(-124, 270)
@@ -24,3 +35,8 @@ position = Vector2(124, 270)
 key_name = "button_L"
 
 [node name="GameUI" parent="." instance=ExtResource("2_wlvk4")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wmi5p")
+
+[node name="LevelEditor" parent="." instance=ExtResource("4_wownj")]
