@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://benui0fkkf58t"]
 
-[ext_resource type="Texture2D" uid="uid://b1ryawtissxd2" path="res://Arts/setas.png" id="1_f6ef5"]
+[ext_resource type="Texture2D" uid="uid://dtismyhbo3mov" path="res://Arts/arrowS.png" id="1_cxe0n"]
 [ext_resource type="Script" uid="uid://bt2hg3b7rwfl7" path="res://Objetos/falling_key.gd" id="2_cxe0n"]
 
 [node name="FallingKey" type="Sprite2D"]
-scale = Vector2(2.8, 2.8)
-texture = ExtResource("1_f6ef5")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_cxe0n")
+hframes = 4
 vframes = 3
 script = ExtResource("2_cxe0n")
 

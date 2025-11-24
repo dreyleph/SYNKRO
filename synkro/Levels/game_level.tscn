@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://prujp2nvwe3n"]
+[gd_scene load_steps=8 format=3 uid="uid://prujp2nvwe3n"]
 
 [ext_resource type="PackedScene" uid="uid://d3r3i3fewsmo0" path="res://Objetos/key_listener.tscn" id="1_up8ek"]
 [ext_resource type="Texture2D" uid="uid://r82k31wxtu2v" path="res://Arts/BKGimg.jpg" id="1_wownj"]
+[ext_resource type="Texture2D" uid="uid://3e2uahspg2vq" path="res://Arts/fundocinzaClaro.jpg" id="2_34xkg"]
 [ext_resource type="PackedScene" uid="uid://b2qjvnw73fgs3" path="res://Levels/game_ui.tscn" id="2_wlvk4"]
+[ext_resource type="Texture2D" uid="uid://byc24ywl7xye1" path="res://Arts/fundocinzaEscuro.jpg" id="3_xk4lf"]
 [ext_resource type="PackedScene" uid="uid://6pgv2uq86shv" path="res://Objetos/level_editor.tscn" id="4_wownj"]
 
 [sub_resource type="Environment" id="Environment_wmi5p"]
@@ -18,20 +20,35 @@ glow_blend_mode = 1
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("1_wownj")
 
+[node name="BackGround2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.171)
+position = Vector2(-4, -0.292022)
+scale = Vector2(0.142663, 0.136803)
+texture = ExtResource("2_34xkg")
+
+[node name="BackGround3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.574)
+position = Vector2(-4, 277)
+scale = Vector2(0.231788, 0.212561)
+texture = ExtResource("3_xk4lf")
+
 [node name="KeyListener" parent="." instance=ExtResource("1_up8ek")]
-position = Vector2(-124, 270)
+position = Vector2(-119, 275)
 key_name = "button_D"
 
 [node name="KeyListener2" parent="." instance=ExtResource("1_up8ek")]
-position = Vector2(-41, 270)
+position = Vector2(-39, 275)
+frame = 5
 key_name = "button_F"
 
 [node name="KeyListener3" parent="." instance=ExtResource("1_up8ek")]
-position = Vector2(41, 270)
+position = Vector2(39, 275)
+frame = 6
 key_name = "button_K"
 
 [node name="KeyListener4" parent="." instance=ExtResource("1_up8ek")]
-position = Vector2(124, 270)
+position = Vector2(119, 275)
+frame = 7
 key_name = "button_L"
 
 [node name="GameUI" parent="." instance=ExtResource("2_wlvk4")]

@@ -8,10 +8,12 @@ var falling_key_queue = []
 
 
 # se a distancia pressionada for menos que o limite, tal pontuacao é dada
-var perfect_press_limit: float = 50 
-var great_press_limit: float = 60
-var good_press_limit: float = 75
-var ok_press_limit: float = 90
+var perfect_press_limit: float = 70
+var great_press_limit: float = 90
+var good_press_limit: float = 105
+var ok_press_limit: float = 120
+var miss_press_limit: float = 140
+
 # caso contrario, errou
 
 var perfect_press_score: float  = 300
@@ -46,14 +48,21 @@ func _process(delta):
 			Signals.ResetCombo.emit()
 	# input e usado, destroi da fila e calcula distancia da area critica e quando foi apertado
 			
+	# Apenas interage/destroi a nota se ela estiver dentro da janela de acerto/erro
 	if Input.is_action_just_pressed(key_name) and falling_key_queue.size() > 0:
-		key_to_pop = falling_key_queue.pop_front()
+		var candidate_key: Sprite2D = falling_key_queue.front()
 		
-		distance_from_pass = abs(key_to_pop.pass_limit - key_to_pop.global_position.y)
+		# Distância da nota atual até a linha de acerto
+		distance_from_pass = abs(candidate_key.pass_limit - candidate_key.global_position.y)
+		
+		# Se estiver fora da janela de erro, ignora o input (não remove a nota da fila)
+		if distance_from_pass >= miss_press_limit:
+			return
+		
+		# Dentro da janela de acerto/erro: agora sim remove da fila e processa o resultado
+		key_to_pop = falling_key_queue.pop_front()
 		$AnimationPlayer.stop()
 		$AnimationPlayer.play("key_hit")
-		
-		
 		
 		var press_score_text: String = ""
 		if distance_from_pass < perfect_press_limit:
@@ -72,7 +81,7 @@ func _process(delta):
 			Signals.IncrementScore.emit(ok_press_score)	
 			press_score_text = "OK"
 			Signals.IncrementCombo.emit()
-		else:
+		elif distance_from_pass < miss_press_limit:
 			press_score_text = "MISS"
 			Signals.ResetCombo.emit()
 			
@@ -88,7 +97,7 @@ func CreateFallingKey(button_name: String):
 	if button_name == key_name:	
 		var fk_inst = falling_key.instantiate()
 		get_tree().get_root().call_deferred("add_child", fk_inst)
-		fk_inst.Setup(position.x, frame + 1)
+		fk_inst.Setup(position.x, frame - 4)
 	
 		falling_key_queue.push_back(fk_inst)
 
