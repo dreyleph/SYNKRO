@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://ey4eblumg684"]
+
+[ext_resource type="Script" uid="uid://c5tx5auq10ag0" path="res://Levels/result_screen.gd" id="1_njsiq"]
+[ext_resource type="FontFile" uid="uid://wobdwqu7u8yd" path="res://Arts/RasterForgeRegular-JpBgm.ttf" id="2_68wwt"]
+[ext_resource type="Texture2D" uid="uid://r82k31wxtu2v" path="res://Arts/BKGimg.jpg" id="3_stymt"]
+
+[node name="result_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njsiq")
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 37.0
+offset_right = 203.0
+offset_bottom = 54.0
+scale = Vector2(3.18, 3.18)
+theme_override_fonts/normal_font = ExtResource("2_68wwt")
+bbcode_enabled = true
+text = "PTS"
+
+[node name="HitsLabel" type="RichTextLabel" parent="."]
+offset_left = 33.0
+offset_top = 253.0
+offset_right = 211.0
+offset_bottom = 271.0
+scale = Vector2(3.18, 3.18)
+theme_override_fonts/normal_font = ExtResource("2_68wwt")
+bbcode_enabled = true
+text = "HITS"
+
+[node name="MissesLabel" type="RichTextLabel" parent="."]
+offset_left = 29.0
+offset_top = 373.0
+offset_right = 200.0
+offset_bottom = 390.0
+scale = Vector2(3.18, 3.18)
+theme_override_fonts/normal_font = ExtResource("2_68wwt")
+bbcode_enabled = true
+text = "MISSES"
+
+[node name="AccuracyLabel" type="RichTextLabel" parent="."]
+offset_left = 809.0
+offset_top = 204.0
+offset_right = 895.0
+offset_bottom = 222.0
+scale = Vector2(3.18, 3.18)
+theme_override_fonts/normal_font = ExtResource("2_68wwt")
+bbcode_enabled = true
+text = "%"
+
+[node name="MaxComboLabel" type="RichTextLabel" parent="."]
+offset_left = 25.0
+offset_top = 146.0
+offset_right = 213.0
+offset_bottom = 165.0
+scale = Vector2(3.18, 3.18)
+theme_override_fonts/normal_font = ExtResource("2_68wwt")
+theme_override_font_sizes/bold_italics_font_size = 1
+bbcode_enabled = true
+text = "MAX COMBO"
+tab_size = 10
+
+[node name="BackGround" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(511, 324)
+scale = Vector2(0.815, 0.820765)
+texture = ExtResource("3_stymt")
