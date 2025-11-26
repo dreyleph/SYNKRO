@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2qjvnw73fgs3"]
+[gd_scene load_steps=4 format=3 uid="uid://b2qjvnw73fgs3"]
 
 [ext_resource type="Script" uid="uid://cyta80hiphh6c" path="res://Levels/game_ui.gd" id="1_vqdjf"]
-[ext_resource type="FontFile" uid="uid://h7gry1lnk84b" path="res://Arts/AceOfSwords3D-BLVLx.otf" id="2_tpokw"]
+[ext_resource type="FontFile" uid="uid://wobdwqu7u8yd" path="res://Arts/RasterForgeRegular-JpBgm.ttf" id="2_tpokw"]
+[ext_resource type="Texture2D" uid="uid://jlupcnoqt6lk" path="res://Arts/pause-1.png.png" id="3_cu12c"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -16,24 +17,40 @@ script = ExtResource("1_vqdjf")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 14.0
-offset_top = 17.0
-offset_right = 344.0
-offset_bottom = 67.0
+offset_left = 854.0
+offset_top = 36.0
+offset_right = 1149.0
+offset_bottom = 86.0
 theme_override_fonts/normal_font = ExtResource("2_tpokw")
 theme_override_font_sizes/normal_font_size = 40
-text = " 0 Pts"
+bbcode_enabled = true
+text = "[center] 0 Pts"
 scroll_active = false
 tab_size = 9
 
 [node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 14.0
-offset_top = 76.0
-offset_right = 344.0
-offset_bottom = 129.0
+offset_left = 746.0
+offset_top = 309.0
+offset_right = 915.0
+offset_bottom = 362.0
 theme_override_fonts/normal_font = ExtResource("2_tpokw")
 theme_override_font_sizes/normal_font_size = 40
 text = " 0X"
 scroll_active = false
 tab_size = 9
+
+[node name="ScoreTxt" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 839.0
+offset_top = 5.0
+offset_right = 953.0
+offset_bottom = 22.0
+theme_override_fonts/normal_font = ExtResource("2_tpokw")
+bbcode_enabled = true
+text = "[center]Score
+"
+
+[node name="BackGround" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(48, 31)
+scale = Vector2(1.474, 1.485)
+texture = ExtResource("3_cu12c")

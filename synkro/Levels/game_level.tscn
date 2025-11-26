@@ -17,13 +17,14 @@ glow_blend_mode = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="BackGround" type="Sprite2D" parent="."]
-scale = Vector2(0.815, 0.815)
+position = Vector2(0, -2.26)
+scale = Vector2(0.815, 0.820765)
 texture = ExtResource("1_wownj")
 
 [node name="BackGround2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.171)
-position = Vector2(-4, -0.292022)
-scale = Vector2(0.142663, 0.136803)
+position = Vector2(-4, -3.2917)
+scale = Vector2(0.142663, 0.138087)
 texture = ExtResource("2_34xkg")
 
 [node name="BackGround3" type="Sprite2D" parent="."]
